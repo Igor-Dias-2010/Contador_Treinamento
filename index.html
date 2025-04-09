@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador 2</title>
+    <style>
+        *{
+            margin: 10px;
+            box-sizing: border-box;
+        }
+        button{
+            border-radius: 7px;
+            border: 2px solid rgb(255, 0, 0);
+            background: black;
+            padding: 3px; 
+            color: yellow;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+        button:hover {
+            background-color:rgb(170, 9, 8);
+            transform: scale(1.1);
+        }
+        body {
+            border: 5px solid red;
+            background: black;
+            color: white;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        section {
+            background: black;
+            padding: 30px;
+            border-radius: 10px;
+            border: 5px solid red;
+            text-align:center;
+        }
+        p {
+            font-size: 50px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+        }
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        </style>
+</head>
+<body>
+    <section>
+        <h1>CONTADOR 2</h1>
+        <p id="resultado"></p>
+        <button onclick="menosmil()">-1000</button>
+        <button onclick="menoscem()">-100</button>
+        <button onclick="menosum()">-1</button>
+        <button onclick="maisum()">+1</button>
+        <button onclick="maiscem()">+100</button>
+        <button onclick="maismil()">+1000</button>
+    </section>
+    <script>
+
+        let numero=0;
+        
+        function menosum(){
+            numero -= 1;
+            render();
+        }
+        function maisum(){
+            numero += 1;
+            render();
+        }
+        function maiscem(){
+            numero += 100;
+            render();
+        }
+        function menoscem(){
+            numero -= 100;
+            render();
+        }
+        function maismil(){
+            numero += 1000
+            render();
+        }
+        function menosmil() {
+            numero -= 1000
+            render();
+        }
+        function render() {
+            const p=document.querySelector("#resultado")
+            p.innerText=numero
+        }
+
+        //iniciar
+        render()
+    </script>
+</body>
+
+</html>
